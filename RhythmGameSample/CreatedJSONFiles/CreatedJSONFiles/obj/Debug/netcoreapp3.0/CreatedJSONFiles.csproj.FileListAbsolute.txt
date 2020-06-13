@@ -1,0 +1,11 @@
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\obj\Debug\netcoreapp3.0\CreatedJSONFiles.csprojAssemblyReference.cache
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\obj\Debug\netcoreapp3.0\CreatedJSONFiles.AssemblyInfoInputs.cache
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\obj\Debug\netcoreapp3.0\CreatedJSONFiles.AssemblyInfo.cs
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\bin\Debug\netcoreapp3.0\CreatedJSONFiles.exe
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\bin\Debug\netcoreapp3.0\CreatedJSONFiles.deps.json
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\bin\Debug\netcoreapp3.0\CreatedJSONFiles.runtimeconfig.json
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\bin\Debug\netcoreapp3.0\CreatedJSONFiles.runtimeconfig.dev.json
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\bin\Debug\netcoreapp3.0\CreatedJSONFiles.dll
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\bin\Debug\netcoreapp3.0\CreatedJSONFiles.pdb
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\obj\Debug\netcoreapp3.0\CreatedJSONFiles.dll
+C:\Users\0ta52\source\repos\CreatedJSONFiles\CreatedJSONFiles\obj\Debug\netcoreapp3.0\CreatedJSONFiles.pdb
