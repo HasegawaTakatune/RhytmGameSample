@@ -8,6 +8,8 @@ using UniRx.Triggers;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GTimer.GameTimer GTime;
+
     /// <summary>
     /// 譜面ファイルパス
     /// </summary>
@@ -21,6 +23,10 @@ public class GameManager : MonoBehaviour
     /// 開始ボタン
     /// </summary>
     [SerializeField] Button play;
+    /// <summary>
+    /// 一時停止ボタン
+    /// </summary>
+    [SerializeField] Button stop;
     /// <summary>
     /// 楽譜読込ボタン
     /// </summary>
@@ -153,12 +159,15 @@ public class GameManager : MonoBehaviour
 
         play.onClick.AsObservable().Subscribe(_ => Play());
 
+        stop.onClick.AsObservable().Subscribe(_ => Stop());
+
         setChart.onClick.AsObservable().Subscribe(_ => LoadChart());
 
         this.UpdateAsObservable()
             .Where(_ => isPlaying)
             .Where(_ => notes.Count > goIndex)
-            .Where(_ => notes[goIndex].GetComponent<NoteController>().Timing <= ((Time.time * 1000 - playTime) + during))
+            //.Where(_ => notes[goIndex].GetComponent<NoteController>().Timing <= ((Time.time * 1000 - playTime) + during))
+            .Where(_ => notes[goIndex].GetComponent<NoteController>().Timing <= ((GTime.MSTime - playTime) + during))
             .Subscribe(_ =>
             {
                 notes[goIndex].GetComponent<NoteController>().GoTo(distance, during);
@@ -170,7 +179,8 @@ public class GameManager : MonoBehaviour
             .Where(_ => Input.GetKeyDown(KeyCode.A))
             .Subscribe(_ =>
             {
-                Beat("Apart", Time.time * 1000 - playTime);
+                //Beat("Apart", Time.time * 1000 - playTime);
+                Beat("Apart", GTime.MSTime - playTime);
                 SoundEffectSubject.OnNext("don");
             });
 
@@ -179,7 +189,8 @@ public class GameManager : MonoBehaviour
             .Where(_ => Input.GetKeyDown(KeyCode.W))
             .Subscribe(_ =>
             {
-                Beat("Bpart", Time.time * 1000 - playTime);
+                //Beat("Bpart", Time.time * 1000 - playTime);
+                Beat("Bpart", GTime.MSTime - playTime);
                 SoundEffectSubject.OnNext("ka");
             });
 
@@ -188,7 +199,8 @@ public class GameManager : MonoBehaviour
             .Where(_ => Input.GetKeyDown(KeyCode.D))
             .Subscribe(_ =>
             {
-                Beat("Cpart", Time.time * 1000 - playTime);
+                //Beat("Cpart", Time.time * 1000 - playTime);
+                Beat("Cpart", GTime.MSTime - playTime);
                 SoundEffectSubject.OnNext("don");
             });
     }
@@ -233,7 +245,13 @@ public class GameManager : MonoBehaviour
                     break;
             }
 
-            Note?.GetComponent<NoteController>().SetParameter(type, timing);
+            NoteController noteController = Note?.GetComponent<NoteController>();
+            if (noteController != null)
+            {
+                noteController.SetParameter(type, timing);
+                noteController.GTime = GTime;
+            }
+
             if (Note != null)
             {
                 notes.Add(Note);
@@ -244,11 +262,30 @@ public class GameManager : MonoBehaviour
 
     private void Play()
     {
-        Music.Stop();
-        Music.Play();
-        playTime = Time.time * 1000;
+        if (isPlaying)
+        {
+            Music.UnPause();
+        }
+        else
+        {
+            Music.Stop();
+            Music.Play();
+        }
+
+        //Music.Stop();
+        //Music.Play();
+        //playTime = Time.time * 1000;
+        playTime = GTime.MSTime;
         isPlaying = true;
         Debug.Log("Game Start!");
+    }
+
+    private void Stop()
+    {
+        if (isPlaying)
+        {
+            Music.Pause();
+        }
     }
 
     private void Beat(string type, float timing)

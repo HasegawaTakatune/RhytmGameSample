@@ -7,6 +7,8 @@ using UniRx.Triggers;
 
 public class NoteController : MonoBehaviour
 {
+    public GTimer.GameTimer GTime;
+
     /// <summary>
     /// ノーツタイプ
     /// </summary>
@@ -43,10 +45,13 @@ public class NoteController : MonoBehaviour
         isGo = false;
         firstPos = transform.position;
 
-        this.UpdateAsObservable().Where(_ => isGo).Subscribe(_ =>
-        {
-            gameObject.transform.position = new Vector3(firstPos.x, firstPos.y + distance * (Time.time * 1000 - goTime) / during, firstPos.z);
-        });
+        this.UpdateAsObservable().
+            Where(_ => isGo).
+            Subscribe(_ =>
+            {
+                //gameObject.transform.position = new Vector3(firstPos.x, firstPos.y + distance * (Time.time * 1000 - goTime) / during, firstPos.z);
+                gameObject.transform.position = new Vector3(firstPos.x, firstPos.y + distance * (GTime.MSTime - goTime) / during, firstPos.z);
+            });
     }
 
     public void SetParameter(string type, float timing)
@@ -59,7 +64,7 @@ public class NoteController : MonoBehaviour
     {
         this.distance = distance;
         this.during = during;
-        goTime = Time.time * 1000;
+        goTime = GTime.MSTime;
 
         isGo = true;
     }
