@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\0ta52\\source\\repos\\CreatedJSONFiles\\CreatedJSONFiles\\CreatedJSONFiles.csproj": {}
+    "C:\\Users\\0ta52\\Documents\\RhythmGame\\RhythmGameSample\\CreatedJSONFiles\\CreatedJSONFiles\\CreatedJSONFiles.csproj": {}
   },
   "projects": {
-    "C:\\Users\\0ta52\\source\\repos\\CreatedJSONFiles\\CreatedJSONFiles\\CreatedJSONFiles.csproj": {
+    "C:\\Users\\0ta52\\Documents\\RhythmGame\\RhythmGameSample\\CreatedJSONFiles\\CreatedJSONFiles\\CreatedJSONFiles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\0ta52\\source\\repos\\CreatedJSONFiles\\CreatedJSONFiles\\CreatedJSONFiles.csproj",
+        "projectUniqueName": "C:\\Users\\0ta52\\Documents\\RhythmGame\\RhythmGameSample\\CreatedJSONFiles\\CreatedJSONFiles\\CreatedJSONFiles.csproj",
         "projectName": "CreatedJSONFiles",
-        "projectPath": "C:\\Users\\0ta52\\source\\repos\\CreatedJSONFiles\\CreatedJSONFiles\\CreatedJSONFiles.csproj",
+        "projectPath": "C:\\Users\\0ta52\\Documents\\RhythmGame\\RhythmGameSample\\CreatedJSONFiles\\CreatedJSONFiles\\CreatedJSONFiles.csproj",
         "packagesPath": "C:\\Users\\0ta52\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\0ta52\\source\\repos\\CreatedJSONFiles\\CreatedJSONFiles\\obj\\",
+        "outputPath": "C:\\Users\\0ta52\\Documents\\RhythmGame\\RhythmGameSample\\CreatedJSONFiles\\CreatedJSONFiles\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

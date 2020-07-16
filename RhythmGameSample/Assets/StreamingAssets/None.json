@@ -1,0 +1,13 @@
+{
+  "title": "sample",
+  "keyboard": "32",
+  "beat": "3",
+  "bpm": "120",
+  "notes": [
+    {
+      "timing": "5000",
+      "type": "Apart",
+      "lane": "0"
+    }
+  ]
+}

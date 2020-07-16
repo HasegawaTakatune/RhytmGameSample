@@ -1,0 +1,58 @@
+{
+  "title": "sample",
+  "keyboard": "32",
+  "beat": "3",
+  "bpm": "120",
+  "notes": [
+    {
+      "timing": "5000",
+      "type": "Apart",
+      "lane": "0"
+    },
+    {
+      "timing": "5250",
+      "type": "Apart",
+      "lane": "1"
+    },
+    {
+      "timing": "5500",
+      "type": "Apart",
+      "lane": "2"
+    },
+    {
+      "timing": "6000",
+      "type": "Apart",
+      "lane": "3"
+    },
+    {
+      "timing": "6250",
+      "type": "Apart",
+      "lane": "4"
+    },
+    {
+      "timing": "6500",
+      "type": "Apart",
+      "lane": "5"
+    },
+    {
+      "timing": "7000",
+      "type": "Apart",
+      "lane": "6"
+    },
+    {
+      "timing": "7250",
+      "type": "Apart",
+      "lane": "7"
+    },
+    {
+      "timing": "7500",
+      "type": "Apart",
+      "lane": "8"
+    },
+    {
+      "timing": "7750",
+      "type": "Apart",
+      "lane": "9"
+    }
+  ]
+}

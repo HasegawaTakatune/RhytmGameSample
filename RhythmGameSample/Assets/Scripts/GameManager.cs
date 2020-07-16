@@ -5,19 +5,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 using UniRx.Triggers;
+using Random = UnityEngine.Random;
+using System.IO;
+using UnityMidi;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GTimer.GameTimer GTime;
 
+    [SerializeField] private MidiPlayer midiPlayer;
+
     /// <summary>
     /// 譜面ファイルパス
     /// </summary>
-    [SerializeField] string FilePath;
+    public string JsonFilePath;
     /// <summary>
     /// 曲ファイルパス
     /// </summary>
-    [SerializeField] string ClipPath;
+    public string MusicFilePath;
 
     /// <summary>
     /// 開始ボタン
@@ -145,6 +150,7 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
+
         Music = GetComponent<AudioSource>();
 
         distance = Math.Abs(beatPoints[0].position.y - lanes[0].position.y);
@@ -205,13 +211,27 @@ public class GameManager : MonoBehaviour
             });
     }
 
+    private void Update()
+    {
+        //Debug.Log("GTime.MainTime : " + GTime.MainTime);
+        //Debug.Log("GTime.MSTime : " + GTime.MSTime);
+    }
+
     private void LoadChart()
     {
         notes = new List<GameObject>();
         NoteTimings = new List<float>();
 
-        string jsonText = Resources.Load<TextAsset>(FilePath).ToString();
-        Music.clip = (AudioClip)Resources.Load(ClipPath);
+        //string bundle = Path.Combine(Application.streamingAssetsPath, JsonFilePath);
+        //Debug.Log("Json file :" + bundle);
+        //AssetBundle assetBundle = AssetBundle.LoadFromFile(bundle);
+
+        string jsonText = File.ReadAllText(Application.streamingAssetsPath + "/" + JsonFilePath); //Resources.Load<TextAsset>(JsonFilePath).ToString();
+
+        //bundle = Path.Combine(Application.streamingAssetsPath, MusicFilePath);
+        //assetBundle = AssetBundle.LoadFromFile(bundle);
+
+        //Music.clip = Resources.Load<AudioClip>(MusicFilePath);       
 
         JsonNode json = JsonNode.Parse(jsonText);
         title = json["title"].Get<string>();
@@ -224,8 +244,11 @@ public class GameManager : MonoBehaviour
             string type = note["type"].Get<string>();
             int lane = int.Parse(note["lane"].Get<string>());
             float timing = float.Parse(note["timing"].Get<string>());
+            float height = Random.Range(0.5f, 4); //float.Parse(note["size"].Get<string>());
+            Vector2 size = new Vector2(1, height);
 
             GameObject Note = null;
+
             switch (type)
             {
                 case "Apart":
@@ -245,10 +268,22 @@ public class GameManager : MonoBehaviour
                     break;
             }
 
+            SpriteRenderer renderer = Note.GetComponent<SpriteRenderer>();
+            BoxCollider2D collider2D = Note.GetComponent<BoxCollider2D>();
+            float baseHeight = renderer.bounds.size.y;
+
+            renderer.size = size;
+            collider2D.size = size;
+
+            Vector2 basePos = lanes[lane].position;
+            Vector2 initPos = new Vector2(basePos.x, basePos.y - ((baseHeight * size.y) - baseHeight));
+
+            Note.transform.position = initPos;
+
             NoteController noteController = Note?.GetComponent<NoteController>();
             if (noteController != null)
             {
-                noteController.SetParameter(type, timing);
+                noteController.SetParameter(type, timing, lane);
                 noteController.GTime = GTime;
             }
 
@@ -258,33 +293,40 @@ public class GameManager : MonoBehaviour
                 NoteTimings.Add(timing);
             }
         }
+        Debug.Log("Created notes :" + notes.Count);
     }
 
     private void Play()
     {
         if (isPlaying)
         {
-            Music.UnPause();
+            //Music.UnPause();
+            midiPlayer.UnPause();
         }
         else
         {
-            Music.Stop();
-            Music.Play();
+            //Music.Stop();
+            //Music.Play();
+            midiPlayer.Play();
+            playTime = GTime.MSTime;
+            isPlaying = true;
+            Debug.Log("Game Start!");
         }
 
         //Music.Stop();
         //Music.Play();
         //playTime = Time.time * 1000;
-        playTime = GTime.MSTime;
-        isPlaying = true;
-        Debug.Log("Game Start!");
+        //playTime = GTime.MSTime;
+        //isPlaying = true;
+        //Debug.Log("Game Start!");
     }
 
     private void Stop()
     {
         if (isPlaying)
         {
-            Music.Pause();
+            midiPlayer.Pause();
+            //Music.Pause();
         }
     }
 

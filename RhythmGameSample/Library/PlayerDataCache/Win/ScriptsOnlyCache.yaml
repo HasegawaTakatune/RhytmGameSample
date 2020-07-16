@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BeatPoint
     - GTimer.GameTimer
     - GameManager
     - MessageEffectManager
@@ -35,7 +36,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/MusicScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -50,6 +51,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -63,27 +68,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11174}
     - Class: 114
-      Script: {instanceID: 11506}
+      Script: {instanceID: 11508}
     - Class: 114
-      Script: {instanceID: 11566}
+      Script: {instanceID: 11568}
     - Class: 114
-      Script: {instanceID: 11616}
+      Script: {instanceID: 11618}
     - Class: 114
-      Script: {instanceID: 12080}
+      Script: {instanceID: 12082}
     - Class: 114
-      Script: {instanceID: 12314}
+      Script: {instanceID: 12316}
     - Class: 114
-      Script: {instanceID: 12832}
+      Script: {instanceID: 12838}
     - Class: 114
-      Script: {instanceID: 13134}
+      Script: {instanceID: 13142}
     - Class: 114
-      Script: {instanceID: 14000}
+      Script: {instanceID: 14008}
     - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 14386}
     - Class: 114
-      Script: {instanceID: 14696}
+      Script: {instanceID: 14704}
     - Class: 114
-      Script: {instanceID: 14736}
+      Script: {instanceID: 14742}
+    - Class: 114
+      Script: {instanceID: 14748}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -333,7 +340,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 1aa03bad3726d1860744086a317d0d59
+      Hash: 6e624726777993e6142c8b41735cf68b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NoteController
@@ -429,6 +436,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu
+  - hash:
+      serializedVersion: 2
       Hash: e255c36616af4b3b0b74a2b68cb33e18
     assemblyName: UniRx.Examples.dll
     namespaceName: UniRx.Examples
@@ -477,6 +490,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: af3cb0a7473edbb6d4a8f1b938427726
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TestPartSize
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
@@ -505,6 +524,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: eb9b497ea40415a98b9458dfad1886d3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NotesKeyBoard
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -849,6 +874,12 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
+      Hash: 3a6ecb9c4892d0c4ede37558d6dcf203
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KeyBorad
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -859,6 +890,12 @@ ScriptsOnlyBuild:
     assemblyName: UniRx.Examples.dll
     namespaceName: UniRx.Examples
     className: Sample06_ConvertToCoroutine
+  - hash:
+      serializedVersion: 2
+      Hash: b31805f6add05bc6639f916439c3d9fd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BeatPoint
   - hash:
       serializedVersion: 2
       Hash: a6e1b6f1abfeaea8abb4936367bbb078
@@ -891,5 +928,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 5
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/MusicScene.unity
   playerPath: C:/Users/0ta52/Documents/RhythmGame/RhythmGameSample/Build/RhythmGameSample.exe
