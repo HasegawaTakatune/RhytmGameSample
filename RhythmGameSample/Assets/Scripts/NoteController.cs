@@ -7,7 +7,7 @@ using UniRx.Triggers;
 
 public class NoteController : MonoBehaviour
 {
-    private const float Interval = 2.0f * 1000;
+    private const float Interval = 5.0f * 1000;
 
     public GTimer.GameTimer GTime;
 
@@ -27,7 +27,6 @@ public class NoteController : MonoBehaviour
     /// ノーツを発射するタイミング
     /// </summary>
     public float Timing { get; private set; }
-
     /// <summary>
     /// レーン位置
     /// </summary>
@@ -102,4 +101,6 @@ public class NoteController : MonoBehaviour
 
         isGo = true;
     }
+
+    public void SetActive(bool value) { gameObject.SetActive(value); }
 }

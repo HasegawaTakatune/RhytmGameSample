@@ -7803,7 +7803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GTime: {fileID: 1104811633}
   midiPlayer: {fileID: 1662834855}
-  JsonFilePath: BGM2.json
+  JsonFilePath: FrogChorus.json
   MusicFilePath: BGM2.mp3
   play: {fileID: 1649957519}
   stop: {fileID: 2062922219}
@@ -7822,6 +7822,39 @@ MonoBehaviour:
   - {fileID: 591474541}
   - {fileID: 1969825596}
   - {fileID: 15254243}
+  - {fileID: 1461222398}
+  - {fileID: 1189740385}
+  - {fileID: 1724456842}
+  - {fileID: 1224361255}
+  - {fileID: 1769174971}
+  - {fileID: 1638285683}
+  - {fileID: 1073939648}
+  - {fileID: 687571132}
+  - {fileID: 1944023271}
+  - {fileID: 196648259}
+  - {fileID: 1509319066}
+  - {fileID: 319563112}
+  - {fileID: 487784759}
+  - {fileID: 202561069}
+  - {fileID: 983897476}
+  - {fileID: 1675035850}
+  - {fileID: 1533043238}
+  - {fileID: 910121376}
+  - {fileID: 1703834677}
+  - {fileID: 1865237497}
+  - {fileID: 612218400}
+  - {fileID: 304547915}
+  - {fileID: 1730271881}
+  - {fileID: 198630568}
+  - {fileID: 1819815627}
+  - {fileID: 703294755}
+  - {fileID: 348689901}
+  - {fileID: 589185332}
+  - {fileID: 1643663074}
+  - {fileID: 706822235}
+  - {fileID: 439335498}
+  - {fileID: 1995401066}
+  - {fileID: 2027529843}
   beatPoints:
   - {fileID: 486904309}
   - {fileID: 1145869624}
@@ -7833,6 +7866,39 @@ MonoBehaviour:
   - {fileID: 1343855833}
   - {fileID: 1328577771}
   - {fileID: 2096695861}
+  - {fileID: 158835029}
+  - {fileID: 542739327}
+  - {fileID: 1739922620}
+  - {fileID: 1759548926}
+  - {fileID: 1484225458}
+  - {fileID: 1887566647}
+  - {fileID: 634380240}
+  - {fileID: 559332563}
+  - {fileID: 286802565}
+  - {fileID: 681247205}
+  - {fileID: 932905277}
+  - {fileID: 2105894371}
+  - {fileID: 893491969}
+  - {fileID: 236888358}
+  - {fileID: 1846806357}
+  - {fileID: 29513547}
+  - {fileID: 456576812}
+  - {fileID: 300290040}
+  - {fileID: 1953750333}
+  - {fileID: 1750073151}
+  - {fileID: 1826928830}
+  - {fileID: 1789972924}
+  - {fileID: 650265203}
+  - {fileID: 2076951875}
+  - {fileID: 840942936}
+  - {fileID: 221280474}
+  - {fileID: 355705892}
+  - {fileID: 1883347317}
+  - {fileID: 1451724025}
+  - {fileID: 487723941}
+  - {fileID: 2065494508}
+  - {fileID: 1788464042}
+  - {fileID: 195946911}
 --- !u!4 &1380804173
 Transform:
   m_ObjectHideFlags: 0
@@ -9278,7 +9344,7 @@ PrefabInstance:
     - target: {fileID: 5448817781190552781, guid: 0b8ae911be3a8d5448503938f35e151b,
         type: 3}
       propertyPath: midiSource.streamingAssetPath
-      value: BGM1.mid
+      value: FrogChorus.mid
       objectReference: {fileID: 0}
     - target: {fileID: 5448817781190552781, guid: 0b8ae911be3a8d5448503938f35e151b,
         type: 3}

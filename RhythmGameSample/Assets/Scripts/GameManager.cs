@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 using UniRx.Triggers;
-using Random = UnityEngine.Random;
 using System.IO;
 using UnityMidi;
+using System.Threading.Tasks;
 
 public class GameManager : MonoBehaviour
 {
@@ -53,11 +53,11 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// ノーツ配置レーン
     /// </summary>
-    [SerializeField] Transform[] lanes = new Transform[10];
+    [SerializeField] Transform[] lanes = new Transform[43];
     /// <summary>
     /// ノーツをはじく位置
     /// </summary>
-    [SerializeField] Transform[] beatPoints = new Transform[10];
+    [SerializeField] Transform[] beatPoints = new Transform[43];
 
     /// <summary>
     /// AudioSource
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// 曲の全ノーツ
     /// </summary>
-    List<GameObject> notes;
+    List<NoteController> notes;
 
     /// <summary>
     /// イベントを通知するサブジェクトを追加
@@ -173,10 +173,11 @@ public class GameManager : MonoBehaviour
             .Where(_ => isPlaying)
             .Where(_ => notes.Count > goIndex)
             //.Where(_ => notes[goIndex].GetComponent<NoteController>().Timing <= ((Time.time * 1000 - playTime) + during))
-            .Where(_ => notes[goIndex].GetComponent<NoteController>().Timing <= ((GTime.MSTime - playTime) + during))
+            .Where(_ => notes[goIndex].Timing <= ((GTime.MSTime - playTime) + during))
             .Subscribe(_ =>
             {
-                notes[goIndex].GetComponent<NoteController>().GoTo(distance, during);
+                Debug.Log(goIndex + " Timing :" + notes[goIndex].Timing);
+                notes[goIndex].GoTo(distance, during);
                 goIndex++;
             });
 
@@ -219,7 +220,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadChart()
     {
-        notes = new List<GameObject>();
+        notes = new List<NoteController>();
         NoteTimings = new List<float>();
 
         //string bundle = Path.Combine(Application.streamingAssetsPath, JsonFilePath);
@@ -239,12 +240,18 @@ public class GameManager : MonoBehaviour
         beat = int.Parse(json["beat"].Get<string>());
         BPM = int.Parse(json["bpm"].Get<string>());
 
+        JsonRhythm jsonRhythm = JsonUtility.FromJson<JsonRhythm>(jsonText);
+        List<note> rhythmNotes = new List<note>();
+        rhythmNotes.AddRange(jsonRhythm.notes);
+
+        rhythmNotes.Sort((a, b) => a.timing - b.timing);
+
         foreach (var note in json["notes"])
         {
             string type = note["type"].Get<string>();
             int lane = int.Parse(note["lane"].Get<string>());
             float timing = float.Parse(note["timing"].Get<string>());
-            float height = Random.Range(0.5f, 4); //float.Parse(note["size"].Get<string>());
+            float height = float.Parse(note["length"].Get<string>());
             Vector2 size = new Vector2(1, height);
 
             GameObject Note = null;
@@ -275,6 +282,7 @@ public class GameManager : MonoBehaviour
             renderer.size = size;
             collider2D.size = size;
 
+
             Vector2 basePos = lanes[lane].position;
             Vector2 initPos = new Vector2(basePos.x, basePos.y - ((baseHeight * size.y) - baseHeight));
 
@@ -285,15 +293,18 @@ public class GameManager : MonoBehaviour
             {
                 noteController.SetParameter(type, timing, lane);
                 noteController.GTime = GTime;
-            }
 
-            if (Note != null)
-            {
-                notes.Add(Note);
+                notes.Add(noteController);
                 NoteTimings.Add(timing);
             }
+
+            //if (Note != null)
+            //{
+            //    notes.Add(Note);
+            //    NoteTimings.Add(timing);
+            //}
         }
-        Debug.Log("Created notes :" + notes.Count);
+        //Debug.Log("Created notes :" + notes.Count);
     }
 
     private void Play()
@@ -307,10 +318,11 @@ public class GameManager : MonoBehaviour
         {
             //Music.Stop();
             //Music.Play();
-            midiPlayer.Play();
+            //midiPlayer.Play();
             playTime = GTime.MSTime;
             isPlaying = true;
-            Debug.Log("Game Start!");
+            //Debug.Log("Game Start!");
+            MusicPlay();
         }
 
         //Music.Stop();
@@ -319,6 +331,13 @@ public class GameManager : MonoBehaviour
         //playTime = GTime.MSTime;
         //isPlaying = true;
         //Debug.Log("Game Start!");
+    }
+
+    async void MusicPlay()
+    {
+        const float WAIT = 1.5f * 1000f;
+        await Task.Run(() => { while (GTime.MSTime < WAIT) { } });
+        midiPlayer.Play();
     }
 
     private void Stop()

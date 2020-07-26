@@ -8,6 +8,8 @@ namespace GTimer
 {
     public class GameTimer : MonoBehaviour
     {
+        public const float SECONDS = 1000.0f;
+
         [SerializeField] private Button PlayButton;
         [SerializeField] private Button StopButton;
         [SerializeField] private Button FrontSkipButton;
@@ -46,7 +48,7 @@ namespace GTimer
         public void ResetTime()
         {
             MainTime = 0;
-            MSTime = 0;
+            MSTime = MainTime * SECONDS;
         }
 
         public void Play()
@@ -61,7 +63,7 @@ namespace GTimer
             {
                 yield return null;
                 MainTime += Time.deltaTime;
-                MSTime = MainTime * 1000;
+                MSTime = MainTime * SECONDS;
             }
         }
 
@@ -83,7 +85,7 @@ namespace GTimer
         private void TimeSkip(float value)
         {
             MainTime += value * Time.deltaTime;
-            MSTime = MainTime * 1000;
+            MSTime = MainTime * SECONDS;
             Music.time = MainTime;
         }
     }

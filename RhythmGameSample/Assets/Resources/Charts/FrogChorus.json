@@ -1,0 +1,616 @@
+{
+"title":"ƒJƒGƒ‹‚Ì‰Ì",
+"beat":"4",
+"bpm":"150",
+"keyboard":"32", 
+"notes": [
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "2000"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "2",
+"timing" : "2400"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "3",
+"timing" : "2800"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "4",
+"timing" : "3200"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "3",
+"timing" : "3600"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "2",
+"timing" : "4000"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "4000"
+}
+,
+{
+"length" : "2",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "4400"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "9",
+"timing" : "4400"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "10",
+"timing" : "4800"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "3",
+"timing" : "5200"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "11",
+"timing" : "5200"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "4",
+"timing" : "5600"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "10",
+"timing" : "5600"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "5",
+"timing" : "6000"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "9",
+"timing" : "6000"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "6000"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "6",
+"timing" : "6400"
+}
+,
+{
+"length" : "2",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "6400"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "16",
+"timing" : "6400"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "5",
+"timing" : "6800"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "17",
+"timing" : "6800"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "4",
+"timing" : "7200"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "10",
+"timing" : "7200"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "18",
+"timing" : "7200"
+}
+,
+{
+"length" : "2",
+"type" : "Apart",
+"lane" : "3",
+"timing" : "7600"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "11",
+"timing" : "7600"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "17",
+"timing" : "7600"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "12",
+"timing" : "8000"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "16",
+"timing" : "8000"
+}
+,
+{
+"length" : "2",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "8400"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "13",
+"timing" : "8400"
+}
+,
+{
+"length" : "2",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "8400"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "12",
+"timing" : "8800"
+}
+,
+{
+"length" : "2",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "9200"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "11",
+"timing" : "9200"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "17",
+"timing" : "9200"
+}
+,
+{
+"length" : "2",
+"type" : "Bpart",
+"lane" : "10",
+"timing" : "9600"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "18",
+"timing" : "9600"
+}
+,
+{
+"length" : "2",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "10000"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "19",
+"timing" : "10000"
+}
+,
+{
+"length" : "2",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "10400"
+}
+,
+{
+"length" : "2",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "10800"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "19",
+"timing" : "10800"
+}
+,
+{
+"length" : "2",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "11200"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "18",
+"timing" : "11200"
+}
+,
+{
+"length" : "0.5",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "11600"
+}
+,
+{
+"length" : "2",
+"type" : "Cpart",
+"lane" : "17",
+"timing" : "11600"
+}
+,
+{
+"length" : "0.5",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "11800"
+}
+,
+{
+"length" : "0.5",
+"type" : "Apart",
+"lane" : "2",
+"timing" : "12000"
+}
+,
+{
+"length" : "2",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "12000"
+}
+,
+{
+"length" : "0.5",
+"type" : "Apart",
+"lane" : "2",
+"timing" : "12200"
+}
+,
+{
+"length" : "0.5",
+"type" : "Apart",
+"lane" : "3",
+"timing" : "12400"
+}
+,
+{
+"length" : "2",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "12400"
+}
+,
+{
+"length" : "0.5",
+"type" : "Apart",
+"lane" : "3",
+"timing" : "12600"
+}
+,
+{
+"length" : "0.5",
+"type" : "Apart",
+"lane" : "4",
+"timing" : "12800"
+}
+,
+{
+"length" : "2",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "12800"
+}
+,
+{
+"length" : "0.5",
+"type" : "Apart",
+"lane" : "4",
+"timing" : "13000"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "3",
+"timing" : "13200"
+}
+,
+{
+"length" : "2",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "13200"
+}
+,
+{
+"length" : "1",
+"type" : "Apart",
+"lane" : "2",
+"timing" : "13600"
+}
+,
+{
+"length" : "0.5",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "13600"
+}
+,
+{
+"length" : "0.5",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "13800"
+}
+,
+{
+"length" : "2",
+"type" : "Apart",
+"lane" : "1",
+"timing" : "14000"
+}
+,
+{
+"length" : "0.5",
+"type" : "Bpart",
+"lane" : "9",
+"timing" : "14000"
+}
+,
+{
+"length" : "2",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "14000"
+}
+,
+{
+"length" : "0.5",
+"type" : "Bpart",
+"lane" : "9",
+"timing" : "14200"
+}
+,
+{
+"length" : "0.5",
+"type" : "Bpart",
+"lane" : "10",
+"timing" : "14400"
+}
+,
+{
+"length" : "0.5",
+"type" : "Bpart",
+"lane" : "10",
+"timing" : "14600"
+}
+,
+{
+"length" : "0.5",
+"type" : "Bpart",
+"lane" : "11",
+"timing" : "14800"
+}
+,
+{
+"length" : "2",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "14800"
+}
+,
+{
+"length" : "0.5",
+"type" : "Bpart",
+"lane" : "11",
+"timing" : "15000"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "10",
+"timing" : "15200"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "9",
+"timing" : "15600"
+}
+,
+{
+"length" : "0.5",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "15600"
+}
+,
+{
+"length" : "0.5",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "15800"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "16000"
+}
+,
+{
+"length" : "0.5",
+"type" : "Cpart",
+"lane" : "16",
+"timing" : "16000"
+}
+,
+{
+"length" : "0.5",
+"type" : "Cpart",
+"lane" : "16",
+"timing" : "16200"
+}
+,
+{
+"length" : "1",
+"type" : "Bpart",
+"lane" : "8",
+"timing" : "16400"
+}
+,
+{
+"length" : "0.5",
+"type" : "Cpart",
+"lane" : "17",
+"timing" : "16400"
+}
+,
+{
+"length" : "0.5",
+"type" : "Cpart",
+"lane" : "17",
+"timing" : "16600"
+}
+,
+{
+"length" : "0.5",
+"type" : "Cpart",
+"lane" : "18",
+"timing" : "16800"
+}
+,
+{
+"length" : "0.5",
+"type" : "Cpart",
+"lane" : "18",
+"timing" : "17000"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "17",
+"timing" : "17200"
+}
+,
+{
+"length" : "1",
+"type" : "Cpart",
+"lane" : "16",
+"timing" : "17600"
+}
+,
+{
+"length" : "2",
+"type" : "Cpart",
+"lane" : "15",
+"timing" : "18000"
+}
+]
+}

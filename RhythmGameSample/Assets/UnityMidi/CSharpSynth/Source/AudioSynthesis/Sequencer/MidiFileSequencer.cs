@@ -28,6 +28,8 @@ namespace AudioSynthesis.Sequencer
         private int sampleTime;
         private int eventIndex;
 
+        public double bpm;
+
         //--Public Properties
         public Synthesizer Synth
         {
@@ -162,7 +164,8 @@ namespace AudioSynthesis.Sequencer
         private void LoadMidiFile(MidiFile midiFile)
         {
             //Converts midi to sample based format for easy sequencing
-            double BPM = 120.0;
+            //double BPM = 120.0;
+            bpm = 120.0;
             //Combine all tracks into 1 track that is organized from lowest to highest absolute time
             if(midiFile.Tracks.Length > 1 || midiFile.Tracks[0].EndTime == 0)
                 midiFile.CombineTracks();
@@ -176,11 +179,12 @@ namespace AudioSynthesis.Sequencer
             {
                 MidiEvent mEvent = midiFile.Tracks[0].MidiEvents[x];
                 mdata[x] = new MidiMessage((byte)mEvent.Channel, (byte)mEvent.Command, (byte)mEvent.Data1, (byte)mEvent.Data2);
-                absDelta += synth.SampleRate * mEvent.DeltaTime * (60.0 / (BPM * midiFile.Division));
+                //absDelta += synth.SampleRate * mEvent.DeltaTime * (60.0 / (BPM * midiFile.Division));
+                absDelta += synth.SampleRate * mEvent.DeltaTime * (60.0 / (bpm * midiFile.Division));
                 mdata[x].delta = (int)absDelta;
                 //Update tempo
                 if (mEvent.Command == 0xFF && mEvent.Data1 == 0x51)
-                    BPM = Math.Round(MidiHelper.MicroSecondsPerMinute / (double)((MetaNumberEvent)mEvent).Value, 2);
+                    bpm = Math.Round(MidiHelper.MicroSecondsPerMinute / (double)((MetaNumberEvent)mEvent).Value, 2);//BPM = Math.Round(MidiHelper.MicroSecondsPerMinute / (double)((MetaNumberEvent)mEvent).Value, 2);            
             }
             //Set total time to proper value
             totalTime = mdata[mdata.Length - 1].delta;
